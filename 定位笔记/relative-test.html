@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relative相对定位</title>
+    <style>
+        .div1{
+            background-color: #ccccfd;
+            border: 3px solid #0000f5;
+            margin-bottom: 10px;
+        }
+        .div2{
+            background-color: rgb(252, 238, 43);
+            border: 3px solid #ee9765;
+            position: relative;
+            margin-bottom: 10px;
+            left: -20px;
+        }
+        .div3{
+            background-color: rgb(130, 247, 52);
+            border: 3px solid #34d1d6;
+            position: relative;
+            margin-bottom: 10px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">这是正常定位的元素div1</div>
+    <div class="div2">div2元素相对于div1正常位置向左移动20px</div>
+    <div class="div3">div3元素相对于div1正常位置向右移动20px</div>
+    <div class="div4">样式 "left:-20px" 从元素的原始左侧位置减去 20 像素。
+         样式 "left:20px" 向元素的原始左侧位置增加 20 像素
+    </div>
+    
+
+</body>
+</html>

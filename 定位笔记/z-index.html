@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        .div{
+            position: relative;
+        }
+        .div1{
+            background-color: #ccccfd;
+            border: 3px solid #0000f5;
+            margin-bottom: 10px;
+            height: 400px;
+            width: 400px;
+            z-index: 1;
+        }
+        .div2{
+            background-color: rgb(130, 247, 52);
+            border: 3px solid #34d1d6;
+            position: absolute;
+            z-index: 2; /* put .gold-box above .green-box and .dashed-box */
+            width: 80%;
+            left: 60px;
+            top: 3em;
+           
+            
+        }
+        .div3{
+               position: absolute;
+                z-index: 3; /* put .green-box above .dashed-box */
+                background: rgb(238, 144, 202);
+                width: 20%;
+                left: 55%;
+                top: -5px;
+                height: 7em;
+               
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        
+        <div class="div1">这是z-index等于1的元素div1</div>
+        <div class="div2">这是z-index等于2的元素</div>
+        <div class="div3">这是z-index等于3的元素</div>
+    </div>
+    <p> z-index的值越大，就推叠在越上面</p>
+    
+</body>
+</html>

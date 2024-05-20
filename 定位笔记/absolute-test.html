@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute绝对定位</title>
+    <style>
+        .div1{
+            background-color: #ccccfd;
+            border: 3px solid #0000f5;
+            margin-bottom: 10px;
+        }
+        .div2{
+            background-color: rgb(130, 247, 52);
+            border: 3px solid #34d1d6;
+            position: absolute;
+            left:700px;
+	        top:150px;
+            margin-bottom: 10px;
+        }
+        .div4{
+                background-color: antiquewhite;
+                border:  3px dashed #b7d9f5;
+                width: 600px;
+                height: 600px;
+                position: relative;
+
+        }
+        .div5{
+            background-color: rgb(35, 228, 18);
+                
+                width: 200px;
+                height: 300px;
+                position: absolute;
+                top:100px;
+                left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">这是正常定位的元素div1</div>
+    <div class="div2">div2元素用绝对定位, 它可以放在页面上的任何位置。
+        div2放置距离html页面左边700px和距离html页面顶部150px的位置上。
+    </div>
+    <div class="div4">
+        我是div3元素的父元素：div4元素
+        <div class="div5"> 我是相对于父元素div4 absolute定位的,我距离div4元素的上边100px,距离左边100px</div>
+    </div>
+</body>
+</html>
