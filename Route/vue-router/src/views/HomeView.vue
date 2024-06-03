@@ -2,6 +2,11 @@
 import TheWelcome from '../components/TheWelcome.vue'
 
 
+import { RouterLink, RouterView,useRouter, useRoute } from 'vue-router'
+const route = useRoute()
+console.log(route.query.id);
+
+
 </script>
 
 <template>

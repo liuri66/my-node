@@ -1,11 +1,55 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { hasInjectionContext } from 'vue';
+import { RouterLink, RouterView,useRouter, useRoute } from 'vue-router'
+const router = useRouter();
+function toHomePage(){
+    //方式一
+    // router.push("/home")
+    //方式二,传参
+    router.push({
+        path:"/home4",
+        query:{
+            name:"why",
+            age:18,
+            id:5
+        }
+    })
+    //返回
+    // router.back()
+    //向前/向后
+    // router.go(1/-1)
+}
+function toHome5Page(){
+    //方式一
+    // router.push("/home")
+    //方式二,传参
+    router.push({
+      // 只能用 name匹配路由不能用path
+        name:"homefive",
+        params:{
+            
+            age:25,
+            id:0
+        }
+    })
+    //返回
+    // router.back()
+    //向前/向后
+    // router.go(1/-1)
+}
+function toHome6Page(info){
+   router.push(info)
+}
 
 </script>
 
 <template>
   <header>
     <div class="wrapper">
+      <!-- <button @click="toHomePage">232323</button> -->
+      <!-- <h1 @click="toHome5Page">点击我跳转到home5</h1> -->
+      <h1 @click="toHome6Page({name:'home4',query: {id:'5'}})">点击我跳转到home6</h1>
+
       <!-- 使用组件 RouterLink 来创建链接。这使得 Vue Router 
       能够在不重新加载页面的情况下改变 URL，处理 URL 的生成、编码和其他功能。 -->
       <nav>

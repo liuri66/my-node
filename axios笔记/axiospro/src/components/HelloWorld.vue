@@ -13,7 +13,6 @@ const login = () => {
   axios({
     // 请求类型 get和GET都可以
     method:'GET',
-    
     //接口网址
     url:'https://artemis.gxzrzyjc.com/milestone-admin/sys/region/region',
     headers: {'token1': '666666'},
@@ -36,6 +35,8 @@ const login2 = () => {
   axios({
     // 请求类型 
     method:'post',
+    responseType:'text',
+
     //接口网址 有token
     url:'https://mock.apifox.com/m1/4467073-4113341-default/login',
     headers:{
@@ -129,16 +130,19 @@ axios.interceptors.request.use(function (config) {
 // })
 
 axios.interceptors.response.use(response=> {
+  console.log(response.data.code === 100);
   // console.log('响应拦截器 成功22');
   //做请求的状态码的判断 200表示 请求成功了，返回data
-  if (response.status === 200) {
+  if (response.data.code === 100) {
     console.log("下面是拦截数据，响应拦截器 成功5.23");
-    console.log(response.data);
+    return response.data.data;
     
   } else {
+
     console.log("发生错误啦");
+    return Promise.reject(response.data.msg) //seccess
   }
-  return response;
+  
   
 },function(error) {
   console.log('响应拦截器 失败');
@@ -156,11 +160,13 @@ axios({
     // axios返回promise对象，所以用then方法指定它成功的一个回调
   }).then((res) => {
     // 获取结果res 接口内容
-    // console.log(res);
+    // data数据
+    console.log(res);
     console.log('自定义回调处理成功的结果');
     
   }).catch(res=>
     {
+      console.log(res); 
       console.log('自定义回调处理失败的结果');
     }
   )
